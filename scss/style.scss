@@ -1,0 +1,54 @@
+@import "header";
+@import "text";
+@import "circle";
+@import "feature";
+@import "footer";
+
+:root {
+	--bg-color: #202433;
+	--bg-footer: #1a1e2b;
+	--text-color: #d1d1d1;
+	--accent-color: #6e508d; 
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+* {
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+body {
+	background-color: var(--bg-color);
+}

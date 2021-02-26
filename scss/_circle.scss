@@ -1,0 +1,137 @@
+.circle {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+
+	max-width: 1280px;
+	width: 80%;
+	padding: 35px 0;
+	margin: 0 auto;
+
+	@media (max-width: 1600px) {
+		width: 95%;
+	}
+	@media (max-width: 800px) {
+		flex-direction: column;
+	}
+	&__item {
+		width: 320px;
+
+		animation: animateCircle 30s ease-in-out infinite alternate;
+		&:hover {
+			animation-play-state: paused;
+		}
+
+		@media (max-width: 576px) {
+			width: calc(260px + (320 - 260) * ((100vw - 320px) / (576 - 320)));
+		}
+	}
+	&__picture {
+		flex-basis: 40%;
+		text-align: center;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 68%;
+
+		padding-left: 30px;
+		@media (max-width: 800px) {
+			padding: 30px 0 0 0;
+		}
+	}
+	&__title {
+		font-weight: 900;
+		color: #fff;
+		font-size: 32px;
+
+		@media (max-width: 768px) {
+			text-align: center;
+
+			font-size: calc(25px + (32 - 25) * ((100vw - 320px) / (576 - 320)));
+		}
+	}
+	&__link {
+		position: relative;
+		overflow: hidden;
+		align-self: flex-start;
+		transform: perspective(1px) translateZ(0);
+
+		margin: 20px 0px 0px 0px;
+
+		padding: 10px;
+		border-radius: 10px;
+
+		font-size: 1em;
+		color: #fff;
+		font-style: italic;
+
+		background-color: var(--accent-color);
+
+		cursor: pointer;
+
+		a {
+			color: #fff;
+		}
+
+		@media (max-width: 768px) {
+			align-self: center;
+		}
+
+		@media (min-width: 992px) {
+			&:before {
+				content: "";
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #5d4277;
+				border-radius: 100%;
+				-webkit-transform: scale(0);
+				transform: scale(0);
+				-webkit-transition-property: transform;
+				transition-property: transform;
+				-webkit-transition-duration: 0.3s;
+				transition-duration: 0.3s;
+				-webkit-transition-timing-function: ease-in-out;
+				transition-timing-function: ease-in-out;
+			}
+			&:hover,
+			&:focus,
+			&:active {
+				color: white;
+			}
+			&:hover:before,
+			&:focus:before,
+			&:active:before {
+				-webkit-transform: scale(2);
+				transform: scale(2);
+			}
+		}
+	}
+	&__paragraph {
+		padding-top: 10px;
+
+		line-height: 25px;
+
+		font-size: 16px;
+		color: var(--text-color);
+
+		@media (max-width: 768px) {
+			text-align: center;
+		}
+	}
+}
+
+@keyframes animateCircle {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
